@@ -246,3 +246,105 @@ dotnet run
 ```
 dotnet watch run
 ```
+
+
+
+
+## Refactor Code
+// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+
+Create directory name Models and then create subdirectory inside Models name Country,
+Create file name CreateCountryDto.cs
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace HotelListingAPI.VSCode.Models.Country
+{
+    public class CreateCountryDto
+    {
+        [required]
+        public string? Name { get; set; }
+        public string? ShortName { get; set; }
+    }
+}
+```
+> and implement it instead of data in Controller.cs file like this (CreateCountryDto createCountry)
+```cs
+[HttpPost]
+public async Task<ActionResult<Country>> CreateCountry(CreateCountryDto createCountry)
+{
+    var country = new Country {
+        Name = createCountry.Name,
+        ShortName = createCountry.ShortName
+    };
+    
+    _context.Countries.Add(country);
+    await _context.SaveChangesAsync();
+    return CreatedAtAction("GetCountry", new { id = country.Id }, country);
+
+}
+```
+
+### Add AutoMapper for map dto with data
+Install "AutoMapper.Extensions.Microsoft.DependencyInjection" on nuGet from VSCode extension or web browser [Auto Mapper](https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection)
+
+This step it's will use Auto Mapper for mapping Dto with data model files after install AutoMapper.
+
+Create folder directory Name : Configurations , And then create file MapperConfig.cs file and push this code into file.
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
+using HotelListingAPI.VSCode.Data; // Country
+using HotelListingAPI.VSCode.Models.Country; // CountryDto
+
+namespace HotelListingAPI.VSCode.Configurations
+{
+    public class MapperConfig : Profile
+    {
+        public MapperConfig()
+        {
+            CreateMap<Country, CreateCountryDto>().ReverseMap();
+        }
+    }
+}
+```
+create method MapperConfig and Map Models with Dto file like the example.
+
+
+Then go to Program.cs file and add Mapper config like this.
+Import Configuration file with 
+```cs
+using HotelListingAPI.VSCode.Configurations;
+```
+
+Add following code before __var app = builder.Build();__
+```cs
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+```
+Finally update CountriesController.cs file like this.
+```cs
+[HttpPost]
+public async Task<ActionResult<Country>> CreateCountry(CreateCountryDto createCountry)
+{
+    // var countryOld = new Country {
+    //     Name = createCountry.Name,
+    //     ShortName = createCountry.ShortName
+    // };
+
+    // Use this code for mapping Dto With Model  
+    var country = _mapper.Map<Country>(createCountry);
+
+    _context.Countries.Add(country);
+    await _context.SaveChangesAsync();
+    return CreatedAtAction("GetCountry", new { id = country.Id }, country);
+}
+```
+
+## Reference
+- https://dev.to/moe23/net-6-with-postgresql-576a
