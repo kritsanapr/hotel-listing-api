@@ -234,3 +234,15 @@ __async__ - Signals to the compiler that this method contains an await statement
 __await__ - The await keyword provides a non-blocking way to start a task, then continue execution when that task completes.
 
 __ActionResult__ - An action is capable of returning a specific data type (see WeatherForecastController action).  When multiple return types are possible, it's common to return ActionResult, IActionResult or ActionResult<T>, where T represents the data type to be returned.
+
+
+
+Command for run project 
+```
+dotnet run 
+
+```
+
+```
+dotnet watch run
+```

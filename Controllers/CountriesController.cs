@@ -31,6 +31,18 @@ namespace HotelListingAPI.VSCode.Controllers
             return Ok(countryList);
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Country>> GetCountry(int id)
+        {
+            var country = await _context.Countries.FindAsync(id);
+            if (country == null)
+            {
+                return NotFound();
+            }
+            return Ok(country);
+
+        }
+
         // POST : api/Countries
         [HttpPost]
         public async Task<ActionResult<Country>> CreateCountry(Country country)
@@ -44,11 +56,35 @@ namespace HotelListingAPI.VSCode.Controllers
 
         // PUT : api/Countries/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCountry(Country country)
+        public async Task<IActionResult> UpdateCountry(int id, Country country)
         {
-            _context.Countries.Update(country);
-            await _context.SaveChangesAsync();
+            if (id != country.Id)
+            {
+                return BadRequest("Invalid Record Id");
+            }
+            _context.Entry(country).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CountryExists(id))
+                {
+                    return NotFound(id);
+                }
+                else
+                {
+                    throw;
+                }
+
+            }
             return NoContent();
+
+            // _context.Countries.Update(country);
+            // await _context.SaveChangesAsync();
+            // return NoContent();
         }
 
         // DELETE : api/Countries/5
@@ -64,5 +100,11 @@ namespace HotelListingAPI.VSCode.Controllers
             await _context.SaveChangesAsync();
             return NoContent();
         }
+
+        private bool CountryExists(int id)
+        {
+            return _context.Countries.Any(e => e.Id == id);
+        }
+
     }
 }
