@@ -1,3 +1,6 @@
+using HotelListingAPI.VSCode.Configurations;
+using HotelListingAPI.VSCode.Data;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,9 +21,15 @@ builder.Services.AddCors(options =>
     .AllowAnyMethod());
 });
 
-// Config Serilog 
+// Config Serilog.
 builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
 
+// Connect Database.
+var connectionString = builder.Configuration.GetConnectionString("HotelListingDbConnectionString");
+builder.Services.AddDbContext<HotelListingDbContext>(options => options.UseNpgsql(connectionString));
+
+// Config AutoMapper.
+builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 var app = builder.Build();
 
