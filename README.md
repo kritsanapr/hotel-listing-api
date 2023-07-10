@@ -211,3 +211,26 @@ namespace HotelListingAPI.VSCode.Data
             );
         }
 ```
+
+Use command line for migrate and update database
+> Command line for make migration
+```
+dotnet ef migrations add "Message"
+```
+
+>Command line of update database, This command it's will insert data in the table.
+```
+dotnet ef database update
+```
+
+### Key Terms and Definitions
+
+Our scaffolded code features some keywords that are defined below for full understanding.
+
+__Task__ - A task in C# is used to implement Task-based Asynchronous Programming. The Task object is typically executed asynchronously on a thread pool thread rather than synchronously on the main thread of the application.
+
+__async__ - Signals to the compiler that this method contains an await statement; it contains asynchronous operations.
+
+__await__ - The await keyword provides a non-blocking way to start a task, then continue execution when that task completes.
+
+__ActionResult__ - An action is capable of returning a specific data type (see WeatherForecastController action).  When multiple return types are possible, it's common to return ActionResult, IActionResult or ActionResult<T>, where T represents the data type to be returned.
