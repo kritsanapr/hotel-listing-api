@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres_demo
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: super_admin
+      POSTGRES_PASSWORD: SomeSecretPassword
+      PGDATA: /data/postgres
+    volumes:
+       - postgres-db:/data/postgres
+    ports:
+      - "6543:5432"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    container_name: dotnet-api
+    depends_on:
+      - postgres
+    ports:
+      - 5000:80
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=dotnet;Username=admin;Password=admin1234
+
+volumes:
+  postgres-db:
+    driver: local
+
+networks:
+  postgres-network:
+    driver: bridge

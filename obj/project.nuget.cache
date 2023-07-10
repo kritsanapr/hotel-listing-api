@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "wlG3aChJzC6bFWA2/ThCwp9PD2GELGgOxig5APYqpzWRb3og9sFkn2w7CnandjeqtTipmGQuKuz30qVC3wDU/A==",
+  "dgSpecHash": "kZy3K9w8LNjde5TVQvT5pPwg4W9FJw+788BPJktlAG1JpaPXs2owAXvC3dj03e8Bdx7nAEQVlO1d6BtHOUEiug==",
   "success": true,
   "projectFilePath": "d:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.8\\microsoft.entityframeworkcore.7.0.8.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.8\\microsoft.entityframeworkcore.abstractions.7.0.8.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.8\\microsoft.entityframeworkcore.analyzers.7.0.8.nupkg.sha512",
+    "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
@@ -22,6 +23,8 @@
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\kritsana.prs\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
+    "C:\\Users\\kritsana.prs\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.4\\npgsql.entityframeworkcore.postgresql.7.0.4.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\serilog\\2.12.0\\serilog.2.12.0.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\serilog.aspnetcore\\7.0.0\\serilog.aspnetcore.7.0.0.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\serilog.expressions\\3.4.1\\serilog.expressions.3.4.1.nupkg.sha512",
