@@ -63,9 +63,11 @@ namespace HotelListingAPI.VSCode.Controllers
             // };
 
             var country = _mapper.Map<Country>(createCountry);
-
-            _context.Countries.Add(country);
-            await _context.SaveChangesAsync();
+            
+            await _context.Countries.AddAsync(country);
+            // _context.Countries.Add(country);
+            
+            // await _context.SaveChangesAsync();
             return CreatedAtAction("GetCountry", new { id = country.Id }, country);
         }
 
