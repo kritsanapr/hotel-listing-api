@@ -346,5 +346,13 @@ public async Task<ActionResult<Country>> CreateCountry(CreateCountryDto createCo
 }
 ```
 
+
+### Mapper with relational data
+
+
+
+
+
+
 ## Reference
 - https://dev.to/moe23/net-6-with-postgresql-576a

@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "6gRZB0TsEN8SzwbBO2r+6WwJvp6K3y8TghYCk3h5ZGTmPHW7xZZRPGN5mlXcnE4UYr5D9e+2ebWNycdSEeQjFw==",
+  "dgSpecHash": "cMwGSGRgrAousGgbrD6VaIDllwdQLC7XzpyDyuQw1J+Q+NHkEnLFv/fr7e/w6iXJjRb0iSkjB6VXzqvH2puc6g==",
   "success": true,
   "projectFilePath": "D:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kritsana.prs\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\kritsana.prs\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.8\\microsoft.entityframeworkcore.7.0.8.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.8\\microsoft.entityframeworkcore.abstractions.7.0.8.nupkg.sha512",
     "C:\\Users\\kritsana.prs\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.8\\microsoft.entityframeworkcore.analyzers.7.0.8.nupkg.sha512",
