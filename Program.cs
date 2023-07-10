@@ -1,5 +1,7 @@
 using HotelListingAPI.VSCode.Configurations;
+using HotelListingAPI.VSCode.Contracts;
 using HotelListingAPI.VSCode.Data;
+using HotelListingAPI.VSCode.Repository;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -30,6 +32,9 @@ builder.Services.AddDbContext<HotelListingDbContext>(options => options.UseNpgsq
 
 // Config AutoMapper.
 builder.Services.AddAutoMapper(typeof(MapperConfig));
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<ICountriesRepository, CountriesRepository>();
 
 var app = builder.Build();
 
