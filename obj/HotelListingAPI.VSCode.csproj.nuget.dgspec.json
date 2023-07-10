@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj": {}
+    "D:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj": {}
   },
   "projects": {
-    "d:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj": {
+    "D:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj",
+        "projectUniqueName": "D:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj",
         "projectName": "HotelListingAPI.VSCode",
-        "projectPath": "d:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj",
+        "projectPath": "D:\\TakeCourses\\HotelListingAPI.VSCode\\HotelListingAPI.VSCode.csproj",
         "packagesPath": "C:\\Users\\kritsana.prs\\.nuget\\packages\\",
-        "outputPath": "d:\\TakeCourses\\HotelListingAPI.VSCode\\obj\\",
+        "outputPath": "D:\\TakeCourses\\HotelListingAPI.VSCode\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kritsana.prs\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,13 +45,17 @@
               "target": "Package",
               "version": "[7.0.8, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[7.0.4, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.1.1-dev-00295, )"
             },
             "Serilog.Expressions": {
               "target": "Package",

@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   postgres:
-    container_name: postgres_demo
+    container_name: hotellist-database
     image: postgres:latest
     environment:
-      POSTGRES_USER: super_admin
-      POSTGRES_PASSWORD: SomeSecretPassword
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       PGDATA: /data/postgres
     volumes:
        - postgres-db:/data/postgres
@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: always
-    container_name: dotnet-api
+    container_name: hotellist-api
     depends_on:
       - postgres
     ports:
