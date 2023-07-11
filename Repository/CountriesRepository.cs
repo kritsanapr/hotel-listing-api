@@ -14,7 +14,6 @@ namespace HotelListingAPI.VSCode.Repository
         public CountriesRepository(HotelListingDbContext context) : base(context)
         {
             _context = context;
-
         }
 
         public async Task<Country> GetDetails(int? id)
